@@ -1,5 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+*{
+
+    margin: 0px;
+}
+
+a{
+
+    text-decoration: none;
+    color: black;
+}
+
+body{
+
+    display: grid;
+    min-height: 120vh;
+    grid-template-areas:"a"
+                        "b"
+                        "c";
+}
+
+.navBar{
+
+    background-color:  rgb(255, 138, 4);
+    height: 60px;
+    width: 60%;
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%,0%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    filter: drop-shadow(2px 2px 4px);
+}
+
+.contentTop{
+
+    padding: 0px 20px;
+    padding-top: 5%;
+    height: 100px;
+    grid-area: a;
+    /* background-color: blueviolet; */
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas: "a b c d e";
+    
+    
+}
+.contentTop .logoContainer {
+
+    grid-area: a;
+    display: grid;
+    place-content: center;   
+    
+}
+.accountDiv{
+
+    grid-area: e;
+    display: grid;
+    place-content: center;
+}
+.contentTop .accountDiv .userAccBtn{
+
+display: flex;
+align-items: center;
+/* margin-left:20%; */
+background-color: rgba(128, 128, 128, 0.199);
+padding: 5px;
+margin-right: 3px;
+border-radius: 5px;
+box-shadow: 1px 1px 3px;
+}
+.contentTop .userAccBtn .userProfilePhoto{
+
+    height: 30px;
+    border-radius: 100%;
+    border: black 1px solid;
+    margin-left: 5px;
+    padding: 2px;
+}
+.contentTop .userAccBtn .userName{
+
+    margin-left: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+
+}
+
+.logoContainer .logo{
+
+    height: 75px;
+}
+.main-content-area{
+
+    min-height: 110vh;
+    grid-area: b;
+}
+
+
 .footer{
-    background-color: orange;
-    height: 30vh;
+    background-color: rgb(255, 138, 4);
+    height: 40vh;
     width: 100%;
+    grid-area: c;
 }
