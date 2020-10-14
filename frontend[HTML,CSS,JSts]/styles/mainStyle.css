@@ -76,6 +76,7 @@ box-shadow: 1px 1px 3px;
 .contentTop .userAccBtn .userProfilePhoto{
 
     height: 30px;
+    width: 30px;
     border-radius: 100%;
     border: black 1px solid;
     margin-left: 5px;
