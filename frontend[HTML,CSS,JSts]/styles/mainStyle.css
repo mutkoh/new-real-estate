@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 
 *{
 
@@ -34,6 +35,27 @@ body{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     filter: drop-shadow(2px 2px 4px);
+
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-areas: "a b c d ";
+    align-content: center;
+    z-index: 100;
+}
+
+.navBar ul{
+
+    list-style: none;
+    color: #ffffff;
+    display: flex;
+    text-align: center;
+    grid-area: d;
+}
+
+.navBar ul li{
+
+    margin-left: 20px;
+    font-family: 'Dosis', sans-serif;
 }
 
 .contentTop{
@@ -94,12 +116,114 @@ box-shadow: 1px 1px 3px;
 
     height: 75px;
 }
+.horizontalSeperator{
+
+    background-color: grey;
+    width: 90%;
+    height: 2px;
+    margin: auto;
+    
+}
+
+
 .main-content-area{
 
     min-height: 110vh;
     grid-area: b;
+    
 }
 
+.contentContainer{
+
+    width: 95%;
+    /* background-color: grey; */
+    height: 700px;
+    margin: auto;
+    margin-top: 23px;
+    padding: 5px;
+    font-family: 'Dosis', sans-serif;
+}
+.filtersBar{
+
+    width:90%;
+    height: 60px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 12px;
+    background-color: honeydew;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,8em);
+    align-content: center;
+    grid-gap: 5px;
+    font-family: 'Dosis', sans-serif;
+    
+
+
+}
+
+
+/* the select box */
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    font-family: 'Dosis', sans-serif;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-color:  rgb(255, 138, 4);
+    background-image: none;
+    
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+    
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 7em;
+    height: 2em;
+    line-height: 2;
+    background-color:  rgb(255, 138, 4);
+    overflow: hidden;
+    border-radius: 40px;
+    margin-left: 20px;
+    
+    
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    cursor: pointer;
+
+  }
+
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background-color:  rgb(255, 138, 4);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+    
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #ffffff;
+  }
 
 .footer{
     background-color: rgb(255, 138, 4);
