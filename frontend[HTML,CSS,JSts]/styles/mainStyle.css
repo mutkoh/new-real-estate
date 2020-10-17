@@ -222,7 +222,7 @@ select {
 
 
   /*  */
-  .cardContainer{
+  .cardsContainer{
 
     background-color: rgba(108, 109, 108, 0.329);
     /* height: 2000px; */
@@ -241,13 +241,14 @@ select {
   }
   .houseCard{
     width: 100%;
-    background-color: lawngreen;
+    background-color: rgb(255, 255, 255);
     height: 300px;
     border-radius: 10px;
     display: grid;
     grid-area: "a"
                "b";
-
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.61));
+    border: solid black 1px;
   }
 
   .houseCard .images-scroll-area{
@@ -255,8 +256,88 @@ select {
     width: 100%;
     height: 70%;
     background-color: lemonchiffon;
+    position: relative;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
+  .images-scroll-area .scrollBtns{
+
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-content: center;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 15px;
+    z-index: 10;
+  }
+  .scrollBtns:hover{
+
+    background-color: rgba(0, 0, 0, 0.815);
+  }
+
+  .images-scroll-area .rightScrollBtn{
+
+    right: 0px;
+
+  }
+  .imagesCarouselPart{
+
+    overflow: hidden;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+  }
+  .imagesCarouselPart img{
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .descriptionPart{
+
+    padding: 5px 10px;
+  }
+
+  .descriptionLocation{
+
+    display: flex;
+  }
+  .descriptionLocation img{
+
+    height: 20px;
+    margin-left: 10px;
+    filter: drop-shadow(1px 1px 3px);
+  }
+  .descriptionLocation p{
+    margin-left: 10px;
+  }
+
+  .tagsDescription{
+    display: flex;
+
+  }
+  .tagsDescription p{
+
+    margin-left: 10px;
+  }
 
 
 
