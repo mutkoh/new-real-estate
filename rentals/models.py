@@ -15,7 +15,9 @@ class rentals(models.Model):
     description=models.TextField()
     date_posted= models.DateTimeField(default=timezone.now)
     #agent=models.ForeignKey(User,null=True,on_delete=models.SET_NULL)
-    image=models.FileField(blank=True)
+    #image=models.FileField(blank=True)
+    images = models.FileField(upload_to='images/',
+                              default='https://photos.google.com/photo/AF1QipOK45w-YPGkrI5Y-Njk8IP6eXFwisNgGkBlfJzR')
 
     def __str__(self):
         return self.owner
@@ -23,7 +25,7 @@ class rentals(models.Model):
 
 class RentalImage(models.Model):
     rental=models.ForeignKey(rentals,default=None,on_delete=models.CASCADE)
-    images=models.FileField(upload_to='images/')
+    images=models.FileField(upload_to='images/',default=None)
 
 
     def __str__(self):

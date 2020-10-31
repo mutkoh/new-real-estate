@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{%block content%}
+<article class="media content-section">
+
+    <div class="media-body">
+         <img src="{{object.images.url }}" alt="" class="src">
+        <h4>{{object.size}}</h4>
+        <p>{{object.rent}}</p>
+        <p>{{ object.description }}</p>
+
+    </div>
+
+</article>
+
+{% endblock %}
