@@ -1,6 +1,61 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block filter %}
+<div class="contentContainer">
+        <h4>Filters :</h4>
+        <div class="filtersBar">
+            <!-- the select box -->
+            <div class="select">
+                <select name="slct" id="slct">
+                    <option selected disabled>Location</option>
+                    <option value="1">Mombasa</option>
+                    <option value="2">Nairobi</option>
+                    <option value="3">Kisumu</option>
+                    <option value="4">none</option>
+                </select>
+            </div>
+            <!-- the select box -->
+            <div class="select">
+                <select name="slct" id="slct">
+                    <option selected disabled>Price</option>
+                    <option value="1">High-Low</option>
+                    <option value="2">Low-High</option>
+                    <option value="3">Offer</option>
+                    <option value="4">none</option>
+                </select>
+            </div>
+
+            <!-- the select box -->
+            <div class="select">
+                <select name="slct" id="slct">
+                    <option selected disabled>Size</option>
+                    <option value="1">5 bedroom</option>
+                    <option value="2">2 bedroom</option>
+                    <option value="3">singles</option>
+                    <option value="4">3 bedroom</option>
+                    <option value="5">none</none>
+                </select>
+            </div>
+
+            <!-- the select box -->
+            <div class="select">
+                <select name="slct" id="slct">
+                    <option selected disabled>Rating</option>
+                    <option value="1">High</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Low</option>
+                    <option value="4">none</option>
+                </select>
+            </div>
+
+        </div>
+        <!-- end of the filters bar -->
+
+        <!-- start of the card container -->
+
+
+{% endblock %}
 
 {%block content%}
 

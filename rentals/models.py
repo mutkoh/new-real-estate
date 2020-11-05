@@ -19,6 +19,7 @@ class rentals(models.Model):
     images = models.FileField(upload_to='images/',
                               default='https://photos.google.com/photo/AF1QipOK45w-YPGkrI5Y-Njk8IP6eXFwisNgGkBlfJzR')
 
+
     def __str__(self):
         return self.owner
 
