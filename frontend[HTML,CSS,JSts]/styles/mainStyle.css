@@ -21,8 +21,11 @@ body{
 
   min-height: 100vh;
   display: block;
+  overflow-x: hidden;
 }
 
+
+/* start of the navBar */
 .navBar{
 
    background-color: rgba(128, 128, 128, 0.5);
@@ -44,7 +47,6 @@ body{
   
 }
 .logoCont{
-
   /* background-color: blanchedalmond; */
 
   position: relative;
@@ -66,8 +68,6 @@ body{
    
 }
 .navBar .navAreaRight{
-
-  
 
   display: flex;
   grid-area: b;
@@ -105,230 +105,162 @@ body{
 
 }
 
+/* end of the navBar area */
 
-.main-content-area{
+/* the filter bar */
+.filterBar{
 
-    margin-bottom: 100px;
-    
+  height: 50px;
+  background-color:  rgba(128, 128, 128, 0.5);
+  width: 100%;
+  
+
+  border-top: black 1px solid;
+  position: sticky;
+  top: 0px;
+  z-index: 50;
+  display: grid;
+
+  
+}
+.filterBar p{
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-family: 'Hind', sans-serif;
+  background-color: black;
+  color: white;
+  padding: 1px 6px;
+  font-size: 0.9rem;
 }
 
-.contentContainer{
+/* start of the maincontent area */
+.mainContentArea{
+  padding-left: 2%;
+  margin-top: 50px;
 
-    width: 95%;
-    /* background-color: grey; */
-    
-    margin: auto;
-    margin-top: 23px;
-    padding: 5px;
-    font-family: 'Dosis', sans-serif;
 }
-.filtersBar{
+.mainContentArea h2{
 
-    width:90%;
-    padding: 15px;
-    margin: auto;
-    margin-top: 12px;
-    background-color: rgba(108, 109, 108, 0.329);
-    border-radius: 3px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,8em);
-    align-content: center;
-    grid-gap: 5px;
-    font-family: 'Dosis', sans-serif;
-    
+  font-family: 'Hind', sans-serif;
 
+}
+.cardContainer{
+  width: 95%;
+  background-color: rgba(128, 128, 128, 0.5);
+
+  border-radius: 5px;
+
+  /* grid design */
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 5px;
+  padding: 12px;
 
 }
 
+.card{
+  
+  background-color: honeydew;
 
-/* the select box */
-/* Reset Select */
-select {
-    -webkit-appearance: none;
-    font-family: 'Dosis', sans-serif;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background-color:  rgb(255, 138, 4);
-    background-image: none;
-    
-  }
-  /* Remove IE arrow */
-  select::-ms-expand {
-    display: none;
-    
-  }
-  /* Custom Select */
-  .select {
-    position: relative;
-    display: flex;
-    width: 7em;
-    height: 2em;
-    line-height: 2;
-    background-color:  rgb(255, 138, 4);
-    overflow: hidden;
-    border-radius: 40px;
-    margin-left: 20px;
-    
-    
-  }
-  select {
-    flex: 1;
-    padding: 0 .5em;
-    color: #fff;
-    font-family: 'Dosis', sans-serif;
-    cursor: pointer;
+  filter: drop-shadow(1px 2px 5px);
 
-  }
-
-  /* Arrow */
-  .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background-color:  rgb(255, 138, 4);
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
-    
-  }
-  /* Transition */
-  .select:hover::after {
-    color: #ffffff;
-  }
-
-
-  /*  */
-  .cardsContainer{
-
-    background-color: rgba(108, 109, 108, 0.329);
-    /* height: 2000px; */
-    width: 90%;
-    margin: auto;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 3px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows: repeat(autofit,minmax(300px,1fr));
-    grid-gap: 10px;
-    
-
-   justify-content: center;
-  }
-  .houseCard{
-    cursor: pointer;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    height: 300px;
-    border-radius: 10px;
-    display: grid;
-    grid-area: "a"
-               "b";
-    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.61));
-    border: solid black 1px;
-  }
-
-  .houseCard .images-scroll-area{
-
-    width: 100%;
-    height: 70%;
-    background-color: lemonchiffon;
-    position: relative;
-    
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .images-scroll-area .scrollBtns{
-
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    display: grid;
-    place-content: center;
-    color: white;
-    margin: 10px;
-    cursor: pointer;
-    font-weight: 900;
-    font-size: 15px;
-    z-index: 10;
-  }
-  .scrollBtns:hover{
-
-    background-color: rgba(0, 0, 0, 0.815);
-  }
-
-  .images-scroll-area .rightScrollBtn{
-
-    right: 0px;
-
-  }
-  .imagesCarouselPart{
-
-    overflow: hidden;
-    /* background-color: red; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-
-  }
-  .imagesCarouselPart img{
-
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .descriptionPart{
-
-    padding: 5px 10px;
-  }
-
-  .descriptionLocation{
-
-    display: flex;
-  }
-  .descriptionLocation img{
-
-    height: 20px;
-    margin-left: 10px;
-    filter: drop-shadow(1px 1px 3px);
-  }
-  .descriptionLocation p{
-    margin-left: 10px;
-  }
-
-  .tagsDescription{
-    display: flex;
-
-  }
-  .tagsDescription p{
-
-    margin-left: 10px;
-  }
-
-
-
-.footer{
-
-   background-color: #000000e0;
-   height: 55vh;
-   width: 100vw;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  height: 400px;
 }
+.card .imageCarouselArea{
+
+  background-color: gray;
+  position: relative;
+  z-index: 0;
+}
+
+
+
+.imagesArea{
+
+  height: 100%;
+  width: 100%;
+}
+.imagesArea img{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.descriptionArea{
+  padding: 20px;
+  font-family: monospace;
+}
+
+.descriptionArea .cardTitle{
+
+  margin: 10px 0px;
+}
+
+.cardLocationSection{
+
+  display: grid;
+  grid-template-areas: "a b c ";
+}
+.cardNoOfBedrooms{
+
+  margin: 10px 0px;
+}
+
+/* house Info div */
+
+.houseInfoDiv{
+
+  position: fixed;
+  background-color: white;
+
+  z-index: 80;
+  top: 2vh;
+  bottom: 2vh;
+  left: 1vw;
+  right: 1vw;
+
+  display: grid;
+  grid-template-areas: "a"
+                       "b";
+  grid-template-rows: 7% 93%;
+  display: none;
+
+}
+.houseTopBar{
+
+  grid-area: a;
+  display: grid;
+  position: relative;
+}
+.houseTopBar .closeHouseBtn{
+
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  right: 10px;
+  display: grid;
+  opacity: 0.4;
+  place-content: center;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+}
+.closeHouseBtn img{
+
+  height: 30px;
+}
+.closeHouseBtn:hover{
+
+  opacity: 1;
+  transform: scale(0.7);
+}
+/* end of the house info div */
+
+
+
+/* end of the main content area  */

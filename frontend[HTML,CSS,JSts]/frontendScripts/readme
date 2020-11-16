@@ -1,0 +1,6 @@
+the build directory stores the js files 
+the src dir stores the typescript files which are transcompiled to javascript
+
+<<<<<how I compiled the typescript>>>>>>
+1. edited the tsconfig.json
+2. I run [npx tsc -w] - to run the typescript compiler 
