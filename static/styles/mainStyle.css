@@ -1,11 +1,16 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
 
 *{
 
     margin: 0px;
+    list-style: none;
 }
 
 a{
@@ -18,122 +23,102 @@ body{
 
   min-height: 100vh;
   display: block;
-
 }
 
 .navBar{
 
-    background-color:  rgb(255, 138, 4);
-    height: 60px;
-    width: 60%;
-    position: fixed;
-    left: 50%;
-    top: 0px;
-    transform: translate(-50%,0%);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    filter: drop-shadow(2px 2px 4px);
+   background-color: rgba(128, 128, 128, 0.5);
 
-    display: grid;
-    grid-template-columns: repeat(4,auto);
-    grid-template-areas: "a b c d ";
-    align-content: center;
-    z-index: 100;
+   height: 115px;
+   width: 100vw;
+
+   display: grid;
+   grid-template-areas: "a b";
+   grid-template-columns: 2fr 2fr;
 }
 
-.navBar ul{
+.logoAreaLeft{
 
-    list-style: none;
-    color: #ffffff;
-    display: flex;
-    text-align: center;
-    grid-area: d;
-}
+  grid-area: a;
+  font-family: 'Hind', sans-serif;
 
-.navBar ul li{
-
-    margin-left: 20px;
-    font-family: 'Dosis', sans-serif;
-}
-
-.contentTop{
-
-    padding: 0px 20px;
-    padding-top: 5%;
-    height: 100px;
-    /* background-color: blueviolet; */
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-areas: "a b c d e";
-    
-    
-}
-.contentTop .logoContainer {
-
-    grid-area: a;
-    display: grid;
-    place-content: center;   
-    
-}
-.accountDiv{
-
-    grid-area: e;
-    display: grid;
-    place-content: center;
-}
-.contentTop .accountDiv .userAccBtn{
-
-display: flex;
-align-items: center;
-/* margin-left:20%; */
-background-color: rgba(128, 128, 128, 0.199);
-padding: 5px;
-margin-right: 3px;
-border-radius: 5px;
-box-shadow: 1px 1px 3px;
-}
-.contentTop .userAccBtn .userProfilePhoto{
-
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    border: black 1px solid;
-    margin-left: 5px;
-    padding: 2px;
-}
-.contentTop .userAccBtn .userName{
-
-    margin-left: 5px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 200;
+  align-items: center;
 
 }
+.logoCont{
 
-.logoContainer .logo{
+  /* background-color: blanchedalmond; */
 
-    height: 75px;
+  position: relative;
+  height: 100%;
+  padding-left: 50px;
+  color: white;
 }
-.horizontalSeperator{
+.logoCont .logo{
 
-    background-color: grey;
-    width: 90%;
-    height: 2px;
-    margin: auto;
-    
+  font-family: 'Dosis', sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  padding: 3px 10px;
+
+  font-size: 0.9rem;
+  font-weight: 700px;
+
+}
+.navBar .navAreaRight{
+
+
+
+  display: flex;
+  grid-area: b;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.navAreaRight ul{
+
+  display: flex;
+
+  margin: auto;
+  align-items: center;
+
+  height: 100%;
+}
+
+.navAreaRight ul li{
+
+  margin-right: 23px;
+  padding: 19px;
+  align-items: center;
+  cursor: pointer;
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
+}
+
+.navAreaRight ul li:hover{
+
+  background-color: rgb(173, 172, 172);
+  color: white;
+
 }
 
 
 .main-content-area{
 
     margin-bottom: 100px;
-    
+
 }
 
 .contentContainer{
 
     width: 95%;
     /* background-color: grey; */
-    
+
     margin: auto;
     margin-top: 23px;
     padding: 5px;
@@ -142,7 +127,7 @@ box-shadow: 1px 1px 3px;
 .filtersBar{
 
     width:90%;
-    padding: 5px;
+    padding: 15px;
     margin: auto;
     margin-top: 12px;
     background-color: rgba(108, 109, 108, 0.329);
@@ -152,7 +137,7 @@ box-shadow: 1px 1px 3px;
     align-content: center;
     grid-gap: 5px;
     font-family: 'Dosis', sans-serif;
-    
+
 
 
 }
@@ -171,12 +156,12 @@ select {
     border: 0 !important;
     background-color:  rgb(255, 138, 4);
     background-image: none;
-    
+
   }
   /* Remove IE arrow */
   select::-ms-expand {
     display: none;
-    
+
   }
   /* Custom Select */
   .select {
@@ -189,8 +174,8 @@ select {
     overflow: hidden;
     border-radius: 40px;
     margin-left: 20px;
-    
-    
+
+
   }
   select {
     flex: 1;
@@ -214,7 +199,7 @@ select {
     -webkit-transition: .25s all ease;
     -o-transition: .25s all ease;
     transition: .25s all ease;
-    
+
   }
   /* Transition */
   .select:hover::after {
@@ -223,32 +208,34 @@ select {
 
 
   /*  */
-  .cardContainer{
+  .cardsContainer{
 
     background-color: rgba(108, 109, 108, 0.329);
     /* height: 2000px; */
     width: 90%;
     margin: auto;
-    padding: 5px;
+    padding: 15px;
     margin-top: 20px;
     border-radius: 3px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: repeat(autofit,minmax(300px,1fr));
     grid-gap: 10px;
-    
+
 
    justify-content: center;
   }
   .houseCard{
+    cursor: pointer;
     width: 100%;
-    background-color: lawngreen;
+    background-color: rgb(255, 255, 255);
     height: 300px;
     border-radius: 10px;
     display: grid;
     grid-area: "a"
                "b";
-
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.61));
+    border: solid black 1px;
   }
 
   .houseCard .images-scroll-area{
@@ -256,8 +243,88 @@ select {
     width: 100%;
     height: 70%;
     background-color: lemonchiffon;
+    position: relative;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
+  .images-scroll-area .scrollBtns{
+
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-content: center;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 15px;
+    z-index: 10;
+  }
+  .scrollBtns:hover{
+
+    background-color: rgba(0, 0, 0, 0.815);
+  }
+
+  .images-scroll-area .rightScrollBtn{
+
+    right: 0px;
+
+  }
+  .imagesCarouselPart{
+
+    overflow: hidden;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+  }
+  .imagesCarouselPart img{
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .descriptionPart{
+
+    padding: 5px 10px;
+  }
+
+  .descriptionLocation{
+
+    display: flex;
+  }
+  .descriptionLocation img{
+
+    height: 20px;
+    margin-left: 10px;
+    filter: drop-shadow(1px 1px 3px);
+  }
+  .descriptionLocation p{
+    margin-left: 10px;
+  }
+
+  .tagsDescription{
+    display: flex;
+
+  }
+  .tagsDescription p{
+
+    margin-left: 10px;
+  }
 
 
 
@@ -268,35 +335,3 @@ select {
    width: 100vw;
 }
 
-.content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-.float-left-area  {
-		  width: 70%;
-		  float: left;
-		  }
-
-.float-right-area {
-		  width: 30%;
-		  float: left;
-		  }
-
-.inner-left	  {
-		  padding: 5px 5px 5px 5px;
-		  margin-right: 10px;
-		  border: #999999 1px solid;
-		  min-height: 60px;
-		  }
-
-.inner-right	  {
-		  font-size: 11px;
-		  padding: 5px 5px 5px 5px;
-		  border: #999999 1px solid;
-		  min-height: 60px;
-		  }
-
-.clear-floated	  { clear: both; height: 1px; font-size: 1px; line-height: 1px; padding: 0; margin: 0; }

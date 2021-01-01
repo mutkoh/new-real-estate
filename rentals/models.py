@@ -1,36 +1,33 @@
 from django.db import models
-from django.utils import timezone
-from users.models import User
+from django.forms import ModelForm
+from datetime import datetime
+#from realtors.models import realtor,Agent
 
-
-class rentals(models.Model):
-    location=models.CharField(max_length=30)
-    main_image=models.ImageField(upload_to='images/',
-                                 default='https://photos.google.com/photo/AF1QipOK45w-YPGkrI5Y-Njk8IP6eXFwisNgGkBlfJzR')
-    rent= models.IntegerField()
-    size=models.CharField(max_length=30)
-    owner=models.CharField(max_length=100)
-    phone=models.CharField(max_length=15)
-    house_type=models.CharField(max_length=40)
-    description=models.TextField()
-    date_posted= models.DateTimeField(default=timezone.now)
-    #agent=models.ForeignKey(User,null=True,on_delete=models.SET_NULL)
-    #image=models.FileField(blank=True)
-    images = models.FileField(upload_to='images/',
-                              default='https://photos.google.com/photo/AF1QipOK45w-YPGkrI5Y-Njk8IP6eXFwisNgGkBlfJzR')
-
-
-    def __str__(self):
-        return self.owner
-
-
-class RentalImage(models.Model):
-    rental=models.ForeignKey(rentals,default=None,on_delete=models.CASCADE)
-    images=models.FileField(upload_to='images/',default=None)
-
-
-    def __str__(self):
-        return self.rental.owner
-
+class Listing(models.Model):
+  #realtor =
+  address = models.CharField(max_length=200)
+  city = models.CharField(max_length=100)
+  estate = models.CharField(max_length=100)
+ # main_contact=models.ForeignKey(Agent.phone,on_delete=models.CASCADE)
+  #alternative_contact=models.ForeignKey(realtor.phone,on_delete=models.CASCADE)
+  #zipcode = models.CharField(max_length=20)
+  description = models.TextField(blank=True)
+  rent = models.PositiveIntegerField()
+  bedrooms = models.PositiveIntegerField()
+  #bathrooms = models.DecimalField(max_digits=2, decimal_places=1)
+  garage = models.BooleanField(default=True)
+  #sqft = models.IntegerField()
+  #lot_size = models.DecimalField(max_digits=5, decimal_places=1)
+  photo_main = models.ImageField(upload_to='media/photos/')
+  photo_1 = models.ImageField(upload_to='photos/', blank=True)
+  photo_2 = models.ImageField(upload_to='photos/', blank=True)
+  photo_3 = models.ImageField(upload_to='photos/', blank=True)
+  photo_4 = models.ImageField(upload_to='photos/', blank=True)
+  photo_5 = models.ImageField(upload_to='photos/', blank=True)
+  photo_6 = models.ImageField(upload_to='photos/', blank=True)
+  is_published = models.BooleanField(default=True)
+  list_date = models.DateTimeField(default=datetime.now, blank=True)
+  def __str__(self):
+    return self.address
 
 

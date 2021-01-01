@@ -2,14 +2,13 @@
 {% load static %}
 
 
+
 {%block content%}
 <div class="float-left-area">
     <div class="inner-left">
-
-        <article class="media content-section">
-
+        <article>
             <div class="media-body">
-                <img src="{{object.images.url }}" alt="" class="src">
+                <img src="{{object.images.url }}"  alt="" class="src" >
                 <h4>{{object.size}}</h4>
                 <p>{{object.rent}}</p>
                 <p>{{ object.description }}</p>
@@ -41,4 +40,4 @@
 </div>
 
 
-    {% endblock %}
+{% endblock %}

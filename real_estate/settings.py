@@ -34,9 +34,14 @@ AUTH_USER_MODEL = 'users.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'realtors.apps.RealtorsConfig',
+    'django_extensions',
+    'organizations',
+    'phone_field',
     'rentals.apps.RentalsConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -129,3 +134,11 @@ STATIC_ROOT=os.path.join(BASE_DIR,'root')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+LOGIN_REDIRECT_URL='rental-home'
+LOGOUT_REDIRECT_URL='rental-home'
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
+INVITATION_BACKEND = 'users.backends.CustomInvitations'
+#REGISTRATION_BACKEND = 'myapp.backends.MyRegistrationBackend'
+#ORGS_SLUGFIELD = 'django_extensions.db.fields.AutoSlugField'
+#ORGS_TIMESTAMPED_MODEL = 'django_extensions.db.models.TimeStampedModel'
