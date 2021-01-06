@@ -1,0 +1,63 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>realEstate</title>
+
+    <link rel="stylesheet" href="{% static 'styles/mainStyle.css'%}">
+</head>
+<body>
+<!-- the start of the navbar area of the webppage -->
+<!-- the navbar is floating -->
+<div class="navBar">
+    <div class="logoAreaLeft">
+        <div class="logoCont">
+            <p class="logo">realEstate</p>
+        </div>
+    </div>
+    <div class="navAreaRight">
+        <div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'password_change' %}">Change password</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+        <ul>
+            <li><p>Home </p></li>
+            <li><p>BestOffers</p></li>
+        </ul>
+    </div>
+</div>
+<!-- end of navbar -->
+
+
+<!-- this is the main content of the website -->
+<div class="main-content-area">
+
+    <div class="contentContainer">{% block filter%}{%endblock filter%}
+
+        <!-- end of the filters bar -->
+
+        <!-- start of the card container -->
+        {% block content %}{% endblock content %}
+
+
+        <!-- end of the cards container -->
+
+    </div>
+</div>
+<!-- end of the main content area of the website -->
+
+
+<!-- start of the footer area  -->
+<div class="footer">
+
+</div>
+<!-- end of the footer area -->
+<script src="{% static 'javascripy/houseinfodiv.js'%}"></script>
+</body>
+</html>

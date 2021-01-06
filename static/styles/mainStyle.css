@@ -1,0 +1,337 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+
+*{
+
+    margin: 0px;
+    list-style: none;
+}
+
+a{
+
+    text-decoration: none;
+    color: black;
+}
+
+body{
+
+  min-height: 100vh;
+  display: block;
+}
+
+.navBar{
+
+   background-color: rgba(128, 128, 128, 0.5);
+
+   height: 115px;
+   width: 100vw;
+
+   display: grid;
+   grid-template-areas: "a b";
+   grid-template-columns: 2fr 2fr;
+}
+
+.logoAreaLeft{
+
+  grid-area: a;
+  font-family: 'Hind', sans-serif;
+
+  align-items: center;
+
+}
+.logoCont{
+
+  /* background-color: blanchedalmond; */
+
+  position: relative;
+  height: 100%;
+  padding-left: 50px;
+  color: white;
+}
+.logoCont .logo{
+
+  font-family: 'Dosis', sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  padding: 3px 10px;
+
+  font-size: 0.9rem;
+  font-weight: 700px;
+
+}
+.navBar .navAreaRight{
+
+
+
+  display: flex;
+  grid-area: b;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.navAreaRight ul{
+
+  display: flex;
+
+  margin: auto;
+  align-items: center;
+
+  height: 100%;
+}
+
+.navAreaRight ul li{
+
+  margin-right: 23px;
+  padding: 19px;
+  align-items: center;
+  cursor: pointer;
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
+}
+
+.navAreaRight ul li:hover{
+
+  background-color: rgb(173, 172, 172);
+  color: white;
+
+}
+
+
+.main-content-area{
+
+    margin-bottom: 100px;
+
+}
+
+.contentContainer{
+
+    width: 95%;
+    /* background-color: grey; */
+
+    margin: auto;
+    margin-top: 23px;
+    padding: 5px;
+    font-family: 'Dosis', sans-serif;
+}
+.filtersBar{
+
+    width:90%;
+    padding: 15px;
+    margin: auto;
+    margin-top: 12px;
+    background-color: rgba(108, 109, 108, 0.329);
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,8em);
+    align-content: center;
+    grid-gap: 5px;
+    font-family: 'Dosis', sans-serif;
+
+
+
+}
+
+
+/* the select box */
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    font-family: 'Dosis', sans-serif;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-color:  rgb(255, 138, 4);
+    background-image: none;
+
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 7em;
+    height: 2em;
+    line-height: 2;
+    background-color:  rgb(255, 138, 4);
+    overflow: hidden;
+    border-radius: 40px;
+    margin-left: 20px;
+
+
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    cursor: pointer;
+
+  }
+
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background-color:  rgb(255, 138, 4);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #ffffff;
+  }
+
+
+  /*  */
+  .cardsContainer{
+
+    background-color: rgba(108, 109, 108, 0.329);
+    /* height: 2000px; */
+    width: 90%;
+    margin: auto;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows: repeat(autofit,minmax(300px,1fr));
+    grid-gap: 10px;
+
+
+   justify-content: center;
+  }
+  .houseCard{
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    border-radius: 10px;
+    display: grid;
+    grid-area: "a"
+               "b";
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.61));
+    border: solid black 1px;
+  }
+
+  .houseCard .images-scroll-area{
+
+    width: 100%;
+    height: 70%;
+    background-color: lemonchiffon;
+    position: relative;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .images-scroll-area .scrollBtns{
+
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-content: center;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 15px;
+    z-index: 10;
+  }
+  .scrollBtns:hover{
+
+    background-color: rgba(0, 0, 0, 0.815);
+  }
+
+  .images-scroll-area .rightScrollBtn{
+
+    right: 0px;
+
+  }
+  .imagesCarouselPart{
+
+    overflow: hidden;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+
+  }
+  .imagesCarouselPart img{
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .descriptionPart{
+
+    padding: 5px 10px;
+  }
+
+  .descriptionLocation{
+
+    display: flex;
+  }
+  .descriptionLocation img{
+
+    height: 20px;
+    margin-left: 10px;
+    filter: drop-shadow(1px 1px 3px);
+  }
+  .descriptionLocation p{
+    margin-left: 10px;
+  }
+
+  .tagsDescription{
+    display: flex;
+
+  }
+  .tagsDescription p{
+
+    margin-left: 10px;
+  }
+
+
+
+.footer{
+
+   background-color: #000000e0;
+   height: 55vh;
+   width: 100vw;
+}
+

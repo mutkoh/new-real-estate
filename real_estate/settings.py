@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -27,15 +29,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 AUTH_USER_MODEL = 'users.User'
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    'realtors.apps.RealtorsConfig',
+    'django_extensions',
+    'organizations',
+    'phone_field',
+    'rentals.apps.RentalsConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -56,6 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'real_estate.urls'
 
 TEMPLATES = [
+
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -67,15 +74,19 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            #'libraries': {
+               # 'my_customer_tags': 'rentals.static.my_customer_tags',
+
+            #}
+
         },
     },
 ]
 
 WSGI_APPLICATION = 'real_estate.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# https://docs.djangopro        ject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -83,7 +94,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -103,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -117,9 +126,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT=os.path.join(BASE_DIR,'root')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
+LOGIN_REDIRECT_URL='rental-home'
+LOGOUT_REDIRECT_URL='rental-home'
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
+INVITATION_BACKEND = 'users.backends.CustomInvitations'
+#REGISTRATION_BACKEND = 'myapp.backends.MyRegistrationBackend'
+#ORGS_SLUGFIELD = 'django_extensions.db.fields.AutoSlugField'
+#ORGS_TIMESTAMPED_MODEL = 'django_extensions.db.models.TimeStampedModel'
